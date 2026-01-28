@@ -116,8 +116,8 @@ class Surface(object):
         :param unsafe: A boolean allowing external file access, XML entities
                        and very large files
                        (WARNING: vulnerable to XXE attacks and various DoS).
-                       This does NOT restrict fetching of the main SVG input specified
-                       via the ``url`` parameter.
+                       This does NOT restrict fetching of the main SVG input
+                       specified via the ``url`` parameter.
                        Applications should validate input URLs to prevent SSRF.
 
 
