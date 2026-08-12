@@ -3,6 +3,7 @@ Paths manager.
 
 """
 
+from collections import deque
 from math import copysign, hypot, pi, radians
 
 from .bounding_box import calculate_bounding_box
@@ -31,8 +32,8 @@ def draw_markers(surface, node):
 
     while node.vertices:
         # Calculate position and angle
-        point = node.vertices.pop(0)
-        angles = node.vertices.pop(0) if node.vertices else None
+        point = node.vertices.popleft()
+        angles = node.vertices.popleft() if node.vertices else None
         if angles:
             if position == 'start':
                 angle = pi - angles[0]
@@ -122,7 +123,7 @@ def path(surface, node):
     """Draw a path ``node``."""
     string = node.get('d', '')
 
-    node.vertices = []
+    node.vertices = deque()
 
     for letter in PATH_LETTERS:
         string = string.replace(letter, f' {letter} ')
