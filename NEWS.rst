@@ -3,6 +3,17 @@
 ======
 
 
+Version 2.9.1 released on 2026-09-07
+====================================
+
+**WARNING:** this is a security update.
+
+Specially crafted SVGs with very long paths could lead to exponential rendering times.
+
+* Support path-like objects for the url parameter
+* Fix support of Windows paths
+
+
 Version 2.9.0 released on 2026-03-13
 ====================================
 
